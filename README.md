@@ -8,8 +8,8 @@ Java (BlueJ) Projekt 2025
 ---
 
 ## 📚Inhaltsverzeichnis
-- [Überblick](#überblick)
-- [Installation](#installation)
+- [Konzept](#konzept)
+- [Figuren](#figuren)
 - [Verwendung](#verwendung)
 - [Beispiele](#beispiele)
 - [Features](#features)
@@ -21,12 +21,12 @@ Java (BlueJ) Projekt 2025
 
 ---
 
-## Überblick
+## Konzept
 Kurze Einführung in das Projekt, seinen Zweck und die wichtigsten Funktionen.
 
 ---
 
-## Installation
+## Figuren
 
 ```bash
 git clone https://github.com/benutzer/projekt.git
