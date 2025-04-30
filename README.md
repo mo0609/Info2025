@@ -2,7 +2,7 @@
 Java (BlueJ) Projekt 2025
 
 ![Build Status](https://img.shields.io/github/workflow/status/benutzer/projekt/CI)
-![Version](https://img.shields.io/github/v/release/benutzer/projekt)
+![Version](https://img.shields.io/github/v/release/mo0609/Info2025)
 ![License](https://img.shields.io/github/license/benutzer/projekt)
 
 ---
