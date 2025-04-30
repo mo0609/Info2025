@@ -1,4 +1,4 @@
-## Info2025
+## 💻Info2025
 Java (BlueJ) Projekt 2025
 
 ![Build Status](https://img.shields.io/github/workflow/status/benutzer/projekt/CI)
@@ -7,7 +7,7 @@ Java (BlueJ) Projekt 2025
 
 ---
 
-## Inhaltsverzeichnis
+## 📚Inhaltsverzeichnis
 - [Überblick](#überblick)
 - [Installation](#installation)
 - [Verwendung](#verwendung)
