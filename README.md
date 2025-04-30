@@ -1,7 +1,5 @@
-# Info2025
-
-# Projektname
-Kurze Tagline oder einprägsamer Untertitel.
+## Info2025
+Java (BlueJ) Projekt 2025
 
 ![Build Status](https://img.shields.io/github/workflow/status/benutzer/projekt/CI)
 ![Version](https://img.shields.io/github/v/release/benutzer/projekt)
