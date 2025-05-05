@@ -30,6 +30,10 @@ git clone https://github.com/benutzer/projekt.git
 cd projekt
 npm install
 
+---
+## Changelog
+
+
 
 ---
 ## Style Guide
