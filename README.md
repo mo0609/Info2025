@@ -4,7 +4,7 @@ Java (BlueJ) Projekt 2025
 
 ---
 
-## 📚Inhaltsverzeichnis
+## 📚Inhalt
 - [Konzept](#konzept)
 - [Figuren](#figuren)
 - [Verwendung](#verwendung)
