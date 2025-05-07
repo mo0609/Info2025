@@ -5,7 +5,7 @@ Java (BlueJ) Projekt 2025
 
 ## 📚Inhalt
 - [Konzept](#konzept)
-- [Figuren](#figuren)
+- [Changelog](#changelog)
 
 ---
 
