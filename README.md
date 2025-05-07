@@ -22,5 +22,8 @@ Java (BlueJ) Projekt 2025
 
 ## Changelog
 
-### 07.05.2025
+### 06.05.2025
 - Konzepterstellung
+- 
+- ### 07.05.2025
+- Beginn Erstellung & Design der Figuren
