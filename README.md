@@ -11,13 +11,12 @@ Java (BlueJ) Projekt 2025
 
 ## Konzept/Ideen
 
-- Das Spiel besteht aus einem Feld
-- Man hat eine Traktor, den man steuern muss
-- Es spawnen zufallig Getreide, Vogelscheuchen und Strommasten
-- Wenn man das Getreide nach einer Zeit nicht einsammelt, verschwindet es
-- Wenn man eine Vogelscheche, oder einen Strommast anfährt, dann ist das Spiel vorbei
-- Nach und nach werden die Strommasten und Vogelscheuchen immer mehr
-- Wenn man das getreide eingesammelt hat, spawnt wieder zufällig Getreide, Vogelscheuchen oder Strommasten
+-besteht aus Feld (Landwirtschaft)
+- wird befahren von Mähdrescher, der gelenkt werden muss
+- Traktor erntet zufällig spawnende Feldfrüchte
+- zusätzlich spawnen Vogelscheuchen und Strommasten, gegen die nicht gefahren werden darf => sonst vorbei, Spawnrate erhöht sich kontinuierlich
+- werden die Feldfrüchte nicht geerntet, verderben diese nach einiger Zeit
+- (Wetter beeinflusst das Spiel)
 
 ---
 
