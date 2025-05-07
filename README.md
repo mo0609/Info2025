@@ -20,16 +20,6 @@ Java (BlueJ) Projekt 2025
 - Nach und nach werden die Strommasten und Vogelscheuchen immer mehr
 - Wenn man das getreide eingesammelt hat, spawnt wieder zufällig Getreide, Vogelscheuchen oder Strommasten
 
----
-
-## Figuren
-
-
----
-```bash
-git clone https://github.com/benutzer/projekt.git
-cd projekt
-npm install
 
 ---
 ## Changelog
