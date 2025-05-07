@@ -7,14 +7,6 @@ Java (BlueJ) Projekt 2025
 ## 📚Inhalt
 - [Konzept](#konzept)
 - [Figuren](#figuren)
-- [Verwendung](#verwendung)
-- [Beispiele](#beispiele)
-- [Features](#features)
-- [Konfiguration](#konfiguration)
-- [API Referenz](#api-referenz)
-- [Mitwirken](#mitwirken)
-- [Lizenz](#lizenz)
-- [Kontakt](#kontakt)
 
 ---
 
@@ -42,30 +34,3 @@ npm install
 ---
 ## Changelog
 
-
-
----
-## Style Guide
-
-> node版本 `[xxx]`
-
-
-xxxxxx
-
-npm start
-
-npm run build
-```
-
-
-`Fiddler` 代理：
-
-- `regex:^https?://now\.qq\.com/(.*\.(js|css|png|jpg|gif|jpeg|svg|blob).*)$` `ROOT:/path/$1`
-
-`Whistle` 代理：
-
-- `/^https?://now\.qq\.com/(.*\.(js|css|png|jpg|gif|jpeg|svg|blob).*)$/` `ROOT:/path/$1`
-
-XXX
-
-> 项目备注
