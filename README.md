@@ -11,7 +11,7 @@ Java (BlueJ) Projekt 2025
 
 ## Konzept/Ideen
 
--besteht aus Feld (Landwirtschaft)
+- besteht aus Feld (Landwirtschaft)
 - wird befahren von Mähdrescher, der gelenkt werden muss
 - Traktor erntet zufällig spawnende Feldfrüchte
 - zusätzlich spawnen Vogelscheuchen und Strommasten, gegen die nicht gefahren werden darf => sonst vorbei, Spawnrate erhöht sich kontinuierlich
