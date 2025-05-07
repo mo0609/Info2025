@@ -21,7 +21,8 @@ Java (BlueJ) Projekt 2025
 - Wenn man das getreide eingesammelt hat, spawnt wieder zufällig Getreide, Vogelscheuchen oder Strommasten
 
 
----
+-
 ## Changelog
-# 07.05.2025
+
+### 07.05.2025
 - Konzepterstellung
