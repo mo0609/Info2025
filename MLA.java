@@ -13,7 +13,7 @@ public class MLA extends SPIEL
         setzeRasterSichtbar(true);
         
         rahmen = new RECHTECK[4];
-        macheWaende();
+        macheRahmen();
         
         
         MD = new FIGUR("rechts", "pacman.gif");
@@ -62,13 +62,17 @@ public class MLA extends SPIEL
         }
      }
     
-    public void tasteLosgelassenReagieren(int setTaste){
-        MD.setzeGeschwindigkeit(0.0, 0.0);
-    }
-    
-    public void macheWaende(){
-        
 
+    
+    public void macheRahmen(){
+        rahmen[0] = new RECHTECK(30,2,-15,10);
+        rahmen[1] = new RECHTECK(30,2,-15,-8);
+        rahmen[2] = new RECHTECK(2,20,-15,10);
+        rahmen[3] = new RECHTECK(2,20,13,10);
+        
+        for(int i = 0; i < rahmen.length; i++){
+            rahmen[i].machePassiv();
+        }
     }
 
     public void korrigierenX()
@@ -77,7 +81,6 @@ public class MLA extends SPIEL
         MD.setzeMittelpunkt(neuX, MD.nenneMittelpunktY());
         
     }
-
 
     public void korrigierenY()
     {
