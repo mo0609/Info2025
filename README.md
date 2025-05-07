@@ -23,4 +23,5 @@ Java (BlueJ) Projekt 2025
 
 ---
 ## Changelog
-
+# 07.05.2025
+- Konzepterstellung
