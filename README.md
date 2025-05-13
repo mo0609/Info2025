@@ -22,16 +22,11 @@ Java (BlueJ) Projekt 2025
 
 ## ToDo-Liste
 
-### Project Name
-Project Description
-
 ### Column Name
-- [ ] Task title ~3d #type @name yyyy-mm-dd  
-  - [ ] Sub-task or description  
+- [ ] Figuren   
+- [x] Figuen in BlueJ
 
-### Completed Column ✓
-- [x] Completed task title  
-
+---
 ## Changelog
 
 ### 06.05.2025
