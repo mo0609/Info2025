@@ -22,7 +22,6 @@ Java (BlueJ) Projekt 2025
 
 ## ToDo-Liste
 
-### Column Name
 - [ ] Figuren   
 - [x] Figuen in BlueJ
 
