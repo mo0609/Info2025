@@ -34,3 +34,6 @@ Java (BlueJ) Projekt 2025
 ### 07.05.2025
 - Beginn Erstellung & Design der Figuren
 - Steuerung der Figur
+
+### 13.05.2025
+- richtige Anordnung der Rahmen
