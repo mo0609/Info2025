@@ -22,7 +22,7 @@ Java (BlueJ) Projekt 2025
 
 ## ToDo-Liste
 
-- [ ] Figuren   
+- [ ] Getreide nicht überlappen   
 - [x] Figuen in BlueJ
 
 ---
@@ -37,3 +37,5 @@ Java (BlueJ) Projekt 2025
 
 ### 13.05.2025
 - richtige Anordnung der Rahmen
+- Mähdrescher.gif erstellt
+- Getreide in BlueJ
