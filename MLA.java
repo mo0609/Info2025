@@ -27,6 +27,15 @@ public class MLA extends SPIEL
 
         restart();
         
+        getreide = new FIGUR[30];
+        for(int i = 0; i < getreide.length; i++){
+            getreide[i] = new FIGUR("normal", "heu-ballen-test-bg-2.png", 1, 1);
+            getreide[i].machePassiv();
+            getreide[i].skaliere(0.25);
+            getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+            
+        }
+        
         tickerNeuStarten(0.05);
         
     }
@@ -35,7 +44,19 @@ public class MLA extends SPIEL
     }
 
     public void tick(){
-        
+                for(int i = 0; i < getreide.length; i++){
+            if(MD.beruehrt(getreide[i])){
+                gesammelt = gesammelt + 1;
+                getreide[i].entfernen();
+            
+            }
+            
+            for(int j = 0; j < getreide.length; j++){
+                if(getreide[i].beruehrt(getreide[j])){
+                    getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+                }
+            }
+        }
     }
     
 
@@ -65,11 +86,15 @@ public class MLA extends SPIEL
 
     
     public void macheRahmen(){
-        rahmen[0] = new RECHTECK(30,2,-15,10);
-        rahmen[1] = new RECHTECK(30,2,-15,-8);
-        rahmen[2] = new RECHTECK(2,20,-15,10);
-        rahmen[3] = new RECHTECK(2,20,13,10);
+        rahmen[0] = new RECHTECK(30,1,-15,10);
+        rahmen[1] = new RECHTECK(30,1,-15,-9);
+        rahmen[2] = new RECHTECK(1,20,-15,10);
+        rahmen[3] = new RECHTECK(1,20,14,10);
         
+        rahmen[0].setzeFarbe("dunkelgrün");
+        rahmen[1].setzeFarbe("dunkelgrün");
+        rahmen[2].setzeFarbe("dunkelgrün");
+        rahmen[3].setzeFarbe("dunkelgrün");
         for(int i = 0; i < rahmen.length; i++){
             rahmen[i].machePassiv();
         }
