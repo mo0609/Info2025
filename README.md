@@ -41,4 +41,6 @@ Java (BlueJ) Projekt 2025
 - Getreide in BlueJ
 
 ### 14.05.2025
-- 
+- Getreide spawnen, ohne Übnerlappung
+- Anzeige, gesammeltes Getreide
+- Pixel-Art: Getreidem, Icon Getreideanzeige & Mast
