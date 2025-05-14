@@ -24,6 +24,7 @@ Java (BlueJ) Projekt 2025
 
 - [x] Getreide nicht überlappen   
 - [ ] Getreide Anzeige(oben links)
+- [ ] Hintergund von ChatGPT einbauen
 
 ---
 ## Changelog
