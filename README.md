@@ -23,7 +23,7 @@ Java (BlueJ) Projekt 2025
 ## ToDo-Liste
 
 - [x] Getreide nicht überlappen   
-- [ ] Getreide Anzeige(oben links)
+- [x] Getreide Anzeige(oben rechts)
 - [ ] Hintergund einbauen
 - [ ] Mast einbauen
 
