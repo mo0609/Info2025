@@ -11,7 +11,7 @@ Java (BlueJ) Projekt 2025
 
 ## Konzept/Ideen
 
-- besteht aus Feld (Landwirtschaft)
+- Spiel besteht aus Feld/Acker (Landwirtschaft)
 - wird befahren von Mähdrescher, der gelenkt werden muss
 - Traktor erntet zufällig spawnende Feldfrüchte
 - zusätzlich spawnen Vogelscheuchen und Strommasten, gegen die nicht gefahren werden darf => sonst vorbei, Spawnrate erhöht sich kontinuierlich
@@ -34,15 +34,15 @@ Java (BlueJ) Projekt 2025
 - Konzepterstellung
 
 ### 07.05.2025
-- Beginn Erstellung & Design der Figuren
-- Steuerung der Figur
+- Beginn Programmierung & Design der Figuren
+- Steuerung des Mähdreschers
 
 ### 13.05.2025
 - richtige Anordnung der Rahmen
-- Mähdrescher.gif erstellt
-- Getreide in BlueJ
+- Zufallsspawnen von Getreide
+- Pixel-Art: Mähdrescher
 
 ### 14.05.2025
-- Getreide spawnen, ohne Übnerlappung
+- Problembehebung: Getreide spawnen, ohne Übnerlappung
 - Anzeige, gesammeltes Getreide
-- Pixel-Art: Getreidem, Icon Getreideanzeige & Mast
+- Pixel-Art: Getreide, Icon Getreideanzeige & Mast
