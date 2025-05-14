@@ -4,6 +4,8 @@ public class MLA extends SPIEL
     FIGUR[] getreide;
     FIGUR[] mast;
     FIGUR[] vogel;
+    TEXT anzeige;
+    FIGUR aicon;
     int gesammelt;
     RECHTECK[] rahmen;
 
@@ -16,12 +18,19 @@ public class MLA extends SPIEL
         macheRahmen();
         
         
-        MD = new FIGUR("rechts", "pacman.gif");
-        MD.fuegeZustandVonGifHinzu("links", "pacmanLinks.gif");
-        MD.fuegeZustandVonGifHinzu("oben", "pacmanOben.gif");
-        MD.fuegeZustandVonGifHinzu("unten", "pacmanUnten.gif");
-        MD.skaliere(0.14);
+        MD = new FIGUR("rechts", "M_R.gif");
+        MD.fuegeZustandVonGifHinzu("links", "M_L.gif");
+        MD.fuegeZustandVonGifHinzu("oben", "M_O.gif");
+        MD.fuegeZustandVonGifHinzu("unten", "M_U.gif");
+        MD.skaliere(0.10);
+        
+        MD.setzeAnimationsGeschwindigkeitVon("rechts", 0.25);
+        MD.setzeAnimationsGeschwindigkeitVon("links", 0.25);
+        MD.setzeAnimationsGeschwindigkeitVon("oben", 0.25);
+        MD.setzeAnimationsGeschwindigkeitVon("unten", 0.25);
         MD.macheAktiv();
+        MD.setzeEbene(10);
+        
         
         setzeSchwerkraft(0);
 
@@ -30,12 +39,18 @@ public class MLA extends SPIEL
         getreide = new FIGUR[30];
         for(int i = 0; i < getreide.length; i++){
             getreide[i] = new FIGUR("normal", "heu-ballen-test-bg-2.png", 1, 1);
-            getreide[i].machePassiv();
+            //getreide[i].macheAktiv();
             getreide[i].skaliere(0.25);
             getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
             
         }
         
+        aicon = new FIGUR("normal", "getreide-icon.gif");
+        aicon.skaliere(0.1);
+        aicon.setzeMittelpunkt(9, 9.5);
+        
+        anzeige = new TEXT(10, 9.5, 1, "0");
+        anzeige.setzeSichtbar(true);
         tickerNeuStarten(0.05);
         
     }
@@ -47,15 +62,25 @@ public class MLA extends SPIEL
                 for(int i = 0; i < getreide.length; i++){
             if(MD.beruehrt(getreide[i])){
                 gesammelt = gesammelt + 1;
+                anzeige.setzeInhalt(gesammelt);
                 getreide[i].entfernen();
-            
+                
             }
             
             for(int j = 0; j < getreide.length; j++){
-                if(getreide[i].beruehrt(getreide[j])){
+                if(getreide[i] != getreide[j]){
+            if(MD.beruehrt(getreide[i])){
+                gesammelt = 0;
+                anzeige.setzeInhalt(gesammelt);
+
+                
+            }
+                    if(getreide[i].beruehrt(getreide[j])){
                     getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
                 }
             }
+            
+        }
         }
     }
     
@@ -63,23 +88,27 @@ public class MLA extends SPIEL
     public void tasteReagieren(int taste){
         if(taste == TASTE.RECHTS){
             MD.setzeGeschwindigkeit(3, 0);
+            MD.drehen(90);
             MD.setzeZustand("rechts");
-            korrigierenY();
+            //korrigierenY();
         }
         if(taste == TASTE.LINKS){
             MD.setzeGeschwindigkeit(-3, 0);
+            MD.drehen(-90);
             MD.setzeZustand("links");
-            korrigierenY();
+            //korrigierenY();
         }
         if(taste == TASTE.RAUF){
             MD.setzeGeschwindigkeit(0, 3);
+            MD.drehen(180);
             MD.setzeZustand("oben");
-            korrigierenX();
+            //korrigierenX();
         }
         if(taste == TASTE.RUNTER){
             MD.setzeGeschwindigkeit(0, -3);
+            MD.drehen(0);
             MD.setzeZustand("unten");
-            korrigierenX();
+            //korrigierenX();
         }
      }
     
