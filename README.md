@@ -24,8 +24,11 @@ Java (BlueJ) Projekt 2025
 
 - [x] Getreide nicht überlappen   
 - [x] Getreide Anzeige(oben rechts)
+- [x] Mast einbauen
+- [ ] Game Screen einbauen
+- [ ] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
 - [ ] Hintergund einbauen
-- [ ] Mast einbauen
+
 
 ---
 ## Changelog
@@ -46,3 +49,7 @@ Java (BlueJ) Projekt 2025
 - Problembehebung: Getreide spawnen, ohne Übnerlappung
 - Anzeige, gesammeltes Getreide
 - Pixel-Art: Getreide, Icon Getreideanzeige & Mast
+
+### 20.05.2025
+- Korrektur Mähdrescherfahren
+- Pixel Art: Hintergrund & Game Over Screen
