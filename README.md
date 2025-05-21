@@ -6,6 +6,7 @@ Java (BlueJ) Projekt 2025
 ## 📚Inhalt
 - [Konzept](#konzept)
 - [Changelog](#changelog)
+- [ToDo-Liste](#todo-liste)
 
 ---
 
