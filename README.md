@@ -35,6 +35,7 @@ Java (BlueJ) Projekt 2025
 ## Changelog
 
 ### 06.05.2025
+- Ideen-Sammlung
 - Konzepterstellung
 
 ### 07.05.2025
@@ -44,7 +45,7 @@ Java (BlueJ) Projekt 2025
 ### 13.05.2025
 - richtige Anordnung der Rahmen
 - Zufallsspawnen von Getreide
-- Pixel-Art: Mähdrescher
+- Pixel-Art: Mähdrescher (mit Animation)
 
 ### 14.05.2025
 - Problembehebung: Getreide spawnen, ohne Übnerlappung
@@ -52,5 +53,6 @@ Java (BlueJ) Projekt 2025
 - Pixel-Art: Getreide, Icon Getreideanzeige & Mast
 
 ### 20.05.2025
-- Korrektur Mähdrescherfahren
+- Problembehebung: Verzerrung der Mähdrescherfigur
+- Spawnen von Masten
 - Pixel Art: Hintergrund & Game Over Screen
