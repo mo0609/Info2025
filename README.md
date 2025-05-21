@@ -26,9 +26,9 @@ Java (BlueJ) Projekt 2025
 - [x] Getreide nicht überlappen   
 - [x] Getreide Anzeige(oben rechts)
 - [x] Mast einbauen
-- [ ] Game Screen einbauen & Funktion
+- [x] Game Over Screen
+- [x] Hintergund einbauen
 - [ ] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
-- [ ] Hintergund einbauen
 
 
 ---
@@ -56,3 +56,8 @@ Java (BlueJ) Projekt 2025
 - Problembehebung: Verzerrung der Mähdrescherfigur
 - Spawnen von Masten
 - Pixel Art: Hintergrund & Game Over Screen
+
+### 21.05.2025
+- Verschidene Problembehebungen
+- Vorbereitung zum besseren spawnen von Getreide
+
