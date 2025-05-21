@@ -25,7 +25,7 @@ Java (BlueJ) Projekt 2025
 - [x] Getreide nicht überlappen   
 - [x] Getreide Anzeige(oben rechts)
 - [x] Mast einbauen
-- [ ] Game Screen einbauen
+- [ ] Game Screen einbauen & Funktion
 - [ ] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
 - [ ] Hintergund einbauen
 
