@@ -64,5 +64,5 @@ Java (BlueJ) Projekt 2025
 - Pixel-Art: neues Getreide
 
 ### 27.05.2025
-- 
+- Getreide & Masten werden bei Game Over auch ausgeblendet
 
