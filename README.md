@@ -29,6 +29,7 @@ Java (BlueJ) Projekt 2025
 - [x] Game Over Screen
 - [x] Hintergund einbauen
 - [ ] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
+- [ ] Nach und nach kommt immer mehr Getreide
 
 
 ---
@@ -55,9 +56,13 @@ Java (BlueJ) Projekt 2025
 ### 20.05.2025
 - Problembehebung: Verzerrung der Mähdrescherfigur
 - Spawnen von Masten
-- Pixel Art: Hintergrund & Game Over Screen
+- Pixel-Art: Hintergrund & Game Over Screen
 
 ### 21.05.2025
 - Verschidene Problembehebungen
 - Vorbereitung zum besseren spawnen von Getreide
+- Pixel-Art: neues Getreide
+
+### 27.05.2025
+- 
 
