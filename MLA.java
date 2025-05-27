@@ -11,52 +11,50 @@ public class MLA extends SPIEL
     int gesammelt;
     double zeit;
     RECHTECK[] rahmen;
-
+    int xyz;
 
     MLA(){
         super(900,600);
         setzeRasterSichtbar(true);
-        
-        
+
         back = new FIGUR("a", "back-min.png", 1, 1);
         //back.skaliere(0.1);
         back.setzeMittelpunkt(0, 0);
-        
+
         over = new FIGUR("a", "over-3.png", 1, 1);
         over.skaliere(0.25);
         over.setzeMittelpunkt(0, 0);
         over.setzeSichtbar(false);
-        
+        over.setzeEbene(20);
+
         rahmen = new RECHTECK[4];
         macheRahmen();
-        
+
         MD = new FIGUR("rechts", "M_R.gif");
         MD.fuegeZustandVonGifHinzu("links", "M_L.gif");
         MD.fuegeZustandVonGifHinzu("oben", "M_O.gif");
         MD.fuegeZustandVonGifHinzu("unten", "M_U.gif");
         MD.skaliere(0.10);
-        
+
         MD.setzeAnimationsGeschwindigkeitVon("rechts", 0.25);
         MD.setzeAnimationsGeschwindigkeitVon("links", 0.25);
         MD.setzeAnimationsGeschwindigkeitVon("oben", 0.25);
         MD.setzeAnimationsGeschwindigkeitVon("unten", 0.25);
         MD.macheAktiv();
         MD.setzeEbene(10);
-        
-        
-        setzeSchwerkraft(0);
 
+        setzeSchwerkraft(0);
         restart();
         /*
         getreide = new FIGUR[30];
         for(int i = 0; i < getreide.length; i++){
-            getreide[i] = new FIGUR("normal", "heu-ballen-test-bg-2.png", 1, 1);
-            //getreide[i].macheAktiv();
-            getreide[i].skaliere(0.25);
-            getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
-            
+        getreide[i] = new FIGUR("normal", "heu-ballen-test-bg-2.png", 1, 1);
+        //getreide[i].macheAktiv();
+        getreide[i].skaliere(0.25);
+        getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+
         }
-        */
+         */
         getreide = new FIGUR[50];
         for(int i = 0; i < getreide.length; i++){
             getreide[i] = new FIGUR("normal", "heu-ballen-test-bg-2.png", 1, 1);
@@ -66,16 +64,14 @@ public class MLA extends SPIEL
             if(i > 30){
                 getreide[i].setzeSichtbar(false);
             }
-            
+
         }
+
        
-       
-       
-        
         mast = new FIGUR[15];
         double zufally = zufallszahlVonBis(-5, 5);
         for(int i = 0; i < mast.length; i++){
-            
+
             mast[i] = new FIGUR("normal", "mast.gif");;
             //getreide[i].macheAktiv();
             mast[i].skaliere(0.07);
@@ -83,109 +79,136 @@ public class MLA extends SPIEL
             mast[i].machePassiv();
             mast[i].drehen(90);
         }
-        
-        
+
         aicon = new FIGUR("normal", "getreide-icon.gif");
         aicon.skaliere(0.1);
         aicon.setzeMittelpunkt(9, 9.5);
-        
+
         anzeige = new TEXT(10, 9.5, 1, "0");
         anzeige.setzeSichtbar(true);
-        
-        
-        
+
         
         
         tickerNeuStarten(0.05);
-        
+
     }
 
     public void restart(){
-        
+
     }
 
     public void tick(){
         zeit = zeit + 0.05;
-                for(int i = 0; i < getreide.length; i++){
-            if(MD.beruehrt(getreide[i])){
+        for(int i = 0; i < getreide.length; i++){
+            if(MD.beruehrt(getreide[i]) && zeit >= 1){
                 gesammelt = gesammelt + 1;
                 anzeige.setzeInhalt(gesammelt);
-                getreide[i].entfernen();
-                
-            }
-            
-            for(int j = 0; j < getreide.length; j++){
-                if(getreide[i] != getreide[j] ){
-            //if(MD.beruehrt(getreide[i])){
-                if(getreide[i].beruehrt(MD)){
-                gesammelt = 0;
-                anzeige.setzeInhalt(gesammelt);
+                //getreide[i].entfernen();
+                for(int j = 0; j < getreide.length; j++){
+                    if(getreide[i] != getreide[j] ){
+                        //if(MD.beruehrt(getreide[i])){
 
-                
-            }
-                    if(getreide[i].beruehrt(getreide[j])){
-                    getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+                        if(getreide[i].beruehrt(getreide[j])){
+                            getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+                        }
+                    }
+                    if(getreide[i].beruehrt(MD)){
+                        getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+
+                    }
+
                 }
             }
-            if(getreide[i].beruehrt(MD)){
-                getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
-            
+
+            for(int j = 0; j < getreide.length; j++){
+                if(getreide[i] != getreide[j] ){
+                    //if(MD.beruehrt(getreide[i])){
+                    if(getreide[i].beruehrt(MD)){
+                        gesammelt = 0;
+                        anzeige.setzeInhalt(gesammelt);
+
+                    }
+                    if(getreide[i].beruehrt(getreide[j])){
+                        getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+                    }
+                }
+                if(getreide[i].beruehrt(MD)){
+                    getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+
+                }
+
             }
-            
         }
-        }
-        
-        if(gesammelt == 30){
-            over.setzeSichtbar(true);
-            MD.setzeSichtbar(false);
-            
-        }
-        
+
+        /*if(gesammelt == 50){
+        over.setzeSichtbar(true);
+        MD.setzeSichtbar(false);
+
+        }*/
+
         for(int i = 0; i < mast.length; i++){
             if(MD.beruehrt(mast[i])){
                 over.setzeSichtbar(true);
                 MD.setzeSichtbar(false);
+                for(int j = 0; j < mast.length; j++){
+                    mast[j].setzeSichtbar(false);
+                }
+                
+                for(int j = 0; j < getreide.length; j++){
+                    getreide[j].setzeSichtbar(false);
+                }
+                
+                //xyz = 1;
             }
+            //if(xyz == 1){MD.setzeSichtbar(false);}
         }
-        
+
+        if(getreide[31].nenneSichtbar() == false && zeit == 10){
+            for(int i = 0;i < (getreide.length - 30); i++){
+                //getreide
+
+            }
+
+        }
     }
-    
 
     public void tasteReagieren(int taste){
-        double x = MD.nenneMittelpunktX();
-        double y = MD.nenneMittelpunktY();
-        if(taste == TASTE.RECHTS){
-            MD.setzeGeschwindigkeit(3, 0);
-            //MD.drehen(0);
-            MD.setzeDrehwinkel(0);
-            //MD.setzeZustand("rechts");
-            //korrigierenY();
+        if(MD.nenneSichtbar() == true)
+        {
+            double x = MD.nenneMittelpunktX();
+            double y = MD.nenneMittelpunktY();
+            if(taste == TASTE.RECHTS){
+                MD.setzeGeschwindigkeit(3, 0);
+                //MD.drehen(0);
+                MD.setzeDrehwinkel(0);
+                //MD.setzeZustand("rechts");
+                //korrigierenY();
+            }
+            if(taste == TASTE.LINKS){
+                MD.setzeGeschwindigkeit(-3, 0);
+                MD.setzeDrehwinkel(180);
+                //MD.drehen(90);
+                //MD.setzeZustand("links");
+                //korrigierenY();
+            }
+            if(taste == TASTE.RAUF){
+                MD.setzeGeschwindigkeit(0, 3);
+                MD.setzeDrehwinkel(90);
+                //MD.drehen(-90);
+                //MD.setzeZustand("oben");
+                //korrigierenX();
+            }
+            if(taste == TASTE.RUNTER){
+                MD.setzeGeschwindigkeit(0, -3);
+                MD.setzeDrehwinkel(-90);
+                //MD.drehen(180);
+                //MD.setzeZustand("unten");
+                //korrigierenX();
+            }
+
+            MD.setzeMittelpunkt(x, y);
         }
-        if(taste == TASTE.LINKS){
-            MD.setzeGeschwindigkeit(-3, 0);
-            MD.setzeDrehwinkel(180);
-            //MD.drehen(90);
-            //MD.setzeZustand("links");
-            //korrigierenY();
-        }
-        if(taste == TASTE.RAUF){
-            MD.setzeGeschwindigkeit(0, 3);
-            MD.setzeDrehwinkel(90);
-            //MD.drehen(-90);
-            //MD.setzeZustand("oben");
-            //korrigierenX();
-        }
-        if(taste == TASTE.RUNTER){
-            MD.setzeGeschwindigkeit(0, -3);
-            MD.setzeDrehwinkel(-90);
-            //MD.drehen(180);
-            //MD.setzeZustand("unten");
-            //korrigierenX();
-        }
-        
-        MD.setzeMittelpunkt(x, y);
-     }
-    
+    }
 
     
     public void macheRahmen(){
@@ -193,7 +216,7 @@ public class MLA extends SPIEL
         rahmen[1] = new RECHTECK(30,1,-15,-9);
         rahmen[2] = new RECHTECK(1,20,-15,10);
         rahmen[3] = new RECHTECK(1,20,14,10);
-        
+
         rahmen[0].setzeFarbe("dunkelgrün");
         rahmen[1].setzeFarbe("dunkelgrün");
         rahmen[2].setzeFarbe("dunkelgrün");
@@ -207,7 +230,7 @@ public class MLA extends SPIEL
     {
         double neuX = Math.round(MD.nenneMittelpunktX()-0.5)+0.5;
         MD.setzeMittelpunkt(neuX, MD.nenneMittelpunktY());
-        
+
     }
 
     public void korrigierenY()
