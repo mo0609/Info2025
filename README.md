@@ -69,4 +69,4 @@ Java (BlueJ) Projekt 2025
 - mehrere kleinere Fehlerbehebunge
 
 ### 28.05.2025
-- 
+- Masten- & Getreidespawnen optimiert
