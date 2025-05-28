@@ -65,4 +65,7 @@ Java (BlueJ) Projekt 2025
 
 ### 27.05.2025
 - Getreide & Masten werden bei Game Over auch ausgeblendet
+- mehrere kleinere Fehlerbehebunge
 
+### 28.05.2025
+- 
