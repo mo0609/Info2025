@@ -30,6 +30,7 @@ Java (BlueJ) Projekt 2025
 - [x] Hintergund einbauen
 - [ ] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
 - [ ] Nach und nach kommt immer mehr Getreide
+- [ ] Weniger For-Schleifen im Ticker, für bessere Performance
 
 
 ---
