@@ -70,3 +70,11 @@ Java (BlueJ) Projekt 2025
 
 ### 28.05.2025
 - Masten- & Getreidespawnen optimiert
+
+---
+
+## Dokumentation
+
+### Mastenreihe-Zufallsspawn
+- x-Funktion Mast: 2x-15
+- y-Funktion Mast: 1,5*(2x-15)
