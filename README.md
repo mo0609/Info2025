@@ -76,5 +76,5 @@ Java (BlueJ) Projekt 2025
 ## Dokumentation
 
 ### Mastenreihe-Zufallsspawn
-- x-Funktion Mast: 2x-15
-- y-Funktion Mast: 1,5*(2x-15)
+- x-Funktion Mast: 2i-15
+- y-Funktion Mast: 1,5*(2i-15)
