@@ -12,14 +12,15 @@ public class MLA extends SPIEL
     double zeit;
     RECHTECK[] rahmen;
     int xyz;
+    int anzahl;
 
     MLA(){
         super(900,600);
         setzeRasterSichtbar(true);
 
-        back = new FIGUR("a", "back-min.png", 1, 1);
+        //back = new FIGUR("a", "back-min.png", 1, 1);
         //back.skaliere(0.1);
-        back.setzeMittelpunkt(0, 0);
+        //back.setzeMittelpunkt(0, 0);
 
         over = new FIGUR("a", "over-3.png", 1, 1);
         over.skaliere(0.25);
@@ -55,27 +56,28 @@ public class MLA extends SPIEL
 
         }
          */
-        getreide = new FIGUR[50];
+        getreide = new FIGUR[30];
         for(int i = 0; i < getreide.length; i++){
             getreide[i] = new FIGUR("normal", "heu-ballen-test-bg-2.png", 1, 1);
             //getreide[i].macheAktiv();
             getreide[i].skaliere(0.25);
             getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+            /*
             if(i > 30){
                 getreide[i].setzeSichtbar(false);
-            }
+            }*/
 
         }
 
        
         mast = new FIGUR[15];
-        double zufally = zufallszahlVonBis(-5, 5);
+        double zufally = zufallszahlVonBis(-2, 2);
         for(int i = 0; i < mast.length; i++){
 
             mast[i] = new FIGUR("normal", "mast.gif");;
             //getreide[i].macheAktiv();
             mast[i].skaliere(0.07);
-            mast[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufally);
+            mast[i].setzeMittelpunkt(i + -7.5, zufally * i);
             mast[i].machePassiv();
             mast[i].drehen(90);
         }
@@ -100,10 +102,11 @@ public class MLA extends SPIEL
     public void tick(){
         zeit = zeit + 0.05;
         for(int i = 0; i < getreide.length; i++){
-            if(MD.beruehrt(getreide[i]) && zeit >= 1){
+            if(MD.beruehrt(getreide[i])){
                 gesammelt = gesammelt + 1;
                 anzeige.setzeInhalt(gesammelt);
                 //getreide[i].entfernen();
+                /*
                 for(int j = 0; j < getreide.length; j++){
                     if(getreide[i] != getreide[j] ){
                         //if(MD.beruehrt(getreide[i])){
@@ -118,16 +121,18 @@ public class MLA extends SPIEL
                     }
 
                 }
+                */
+                ZufallGetreide(i);
             }
-
+            
             for(int j = 0; j < getreide.length; j++){
                 if(getreide[i] != getreide[j] ){
                     //if(MD.beruehrt(getreide[i])){
-                    if(getreide[i].beruehrt(MD)){
+                    /*if(getreide[i].beruehrt(MD)){
                         gesammelt = 0;
                         anzeige.setzeInhalt(gesammelt);
 
-                    }
+                    }*/
                     if(getreide[i].beruehrt(getreide[j])){
                         getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
                     }
@@ -145,7 +150,7 @@ public class MLA extends SPIEL
         MD.setzeSichtbar(false);
 
         }*/
-
+        /* WICHTIG
         for(int i = 0; i < mast.length; i++){
             if(MD.beruehrt(mast[i])){
                 over.setzeSichtbar(true);
@@ -162,16 +167,29 @@ public class MLA extends SPIEL
             }
             //if(xyz == 1){MD.setzeSichtbar(false);}
         }
-
+        
         if(getreide[31].nenneSichtbar() == false && zeit == 10){
             for(int i = 0;i < (getreide.length - 30); i++){
                 //getreide
 
             }
 
-        }
+        }*/
     }
-
+    
+    public void ZufallGetreide(int num){
+        for(int i = 0; i < getreide.length; i++){
+            if(getreide[num].beruehrt(getreide[i])){
+                
+                getreide[num].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+                System.out.print(num + "getreide zufallgespawn");
+            }
+            
+            
+        }
+    
+    }
+    
     public void tasteReagieren(int taste){
         if(MD.nenneSichtbar() == true)
         {
