@@ -28,9 +28,10 @@ Java (BlueJ) Projekt 2025
 - [x] Mast einbauen
 - [x] Game Over Screen
 - [x] Hintergund einbauen
-- [ ] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
-- [ ] Nach und nach kommt immer mehr Getreide
+- [x] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
 - [ ] Weniger For-Schleifen im Ticker, für bessere Performance
+- [ ] Mähwerk anzeige einbauen
+- [ ] Für Getreide, 2. Arrey, das dann neu spawn
 
 
 ---
@@ -72,7 +73,9 @@ Java (BlueJ) Projekt 2025
 - Masten- & Getreidespawnen optimiert
 
 ### 03.06.2025
-- 
+- Neue besser Funktion für den Mast
+- Viele Versuche und Problembehebung beim Neuspawnen von Getreide -> neuner Ansatz
+- Pixel-Art: Mähwerk-Icon
 
 ---
 
