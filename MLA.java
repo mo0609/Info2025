@@ -73,13 +73,13 @@ public class MLA extends SPIEL
         mast = new FIGUR[15];
         double zufally = zufallszahlVonBis(-2, 2);
         for(int i = 0; i < mast.length; i++){
-
             mast[i] = new FIGUR("normal", "mast.gif");;
             //getreide[i].macheAktiv();
             mast[i].skaliere(0.07);
-            mast[i].setzeMittelpunkt(i + -7.5, zufally * i);
+            mast[i].setzeMittelpunkt(3.2*i-15, zufally*(3.2*i-15));
             mast[i].machePassiv();
             mast[i].drehen(90);
+            mast[i].setzeEbene(15);
         }
 
         aicon = new FIGUR("normal", "getreide-icon.gif");
@@ -98,15 +98,15 @@ public class MLA extends SPIEL
     public void restart(){
 
     }
-
-    public void tick(){
+    
+        public void tick(){
         zeit = zeit + 0.05;
         for(int i = 0; i < getreide.length; i++){
             if(MD.beruehrt(getreide[i])){
                 gesammelt = gesammelt + 1;
                 anzeige.setzeInhalt(gesammelt);
                 //getreide[i].entfernen();
-                /*
+                
                 for(int j = 0; j < getreide.length; j++){
                     if(getreide[i] != getreide[j] ){
                         //if(MD.beruehrt(getreide[i])){
@@ -121,25 +121,26 @@ public class MLA extends SPIEL
                     }
 
                 }
-                */
+                
                 ZufallGetreide(i);
             }
             
             for(int j = 0; j < getreide.length; j++){
                 if(getreide[i] != getreide[j] ){
                     //if(MD.beruehrt(getreide[i])){
-                    /*if(getreide[i].beruehrt(MD)){
+                    if(getreide[i].beruehrt(MD)){
                         gesammelt = 0;
                         anzeige.setzeInhalt(gesammelt);
 
-                    }*/
+                    }
                     if(getreide[i].beruehrt(getreide[j])){
-                        getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+                        ZufallGetreide(i);
+                        //getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
                     }
                 }
                 if(getreide[i].beruehrt(MD)){
                     getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
-
+                    System.out.println("i: " + i + "getreide zufallgespawn anfang"  + "j: " + j);
                 }
 
             }
@@ -149,7 +150,7 @@ public class MLA extends SPIEL
         over.setzeSichtbar(true);
         MD.setzeSichtbar(false);
 
-        }*/
+        }
         /* WICHTIG
         for(int i = 0; i < mast.length; i++){
             if(MD.beruehrt(mast[i])){
@@ -176,13 +177,54 @@ public class MLA extends SPIEL
 
         }*/
     }
+
     
-    public void ZufallGetreide(int num){
-        for(int i = 0; i < getreide.length; i++){
-            if(getreide[num].beruehrt(getreide[i])){
+        public void neuesGetreideOhneKollision(int index) {
+        boolean positionGefunden = false;
+
+        for (int versuch = 0; versuch < 20; versuch++) {
+            double x = zufallszahlVonBis(-13, 13);
+            double y = zufallszahlVonBis(-8, 8);
+            getreide[index].setzeMittelpunkt(x, y);
+
+            boolean kollision = false;
+
+            // Prüfe Kollision mit anderen Getreiden
+            for (int i = 0; i < getreide.length; i++) {
+                if (i != index && getreide[index].beruehrt(getreide[i])) {
+                    kollision = true;
+                    break;
+                }
+            }
+
+            // Prüfe Kollision mit dem Mähdrescher (MD)
+            if (getreide[index].beruehrt(MD)) {
+                kollision = true;
+            }
+
+            if (!kollision) {
+                positionGefunden = true;
+                break; // Position gefunden, Schleife verlassen
+            }
+        }
+
+        if (!positionGefunden) {
+            System.out.println("Getreide " + index + " konnte keine freie Position finden und wird entfernt.");
+            getreide[index].setzeSichtbar(false);
+            getreide[index].entfernen();
+        }
+    }
+
+
+
+    
+    
+        public void ZufallGetreide(int num){
+            for(int i = 0; i < getreide.length; i++){
+                if(getreide[num].beruehrt(getreide[i])){
                 
                 getreide[num].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
-                System.out.print(num + "getreide zufallgespawn");
+                System.out.println(num + "getreide zufallgespawn");
             }
             
             
