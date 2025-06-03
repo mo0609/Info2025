@@ -71,6 +71,9 @@ Java (BlueJ) Projekt 2025
 ### 28.05.2025
 - Masten- & Getreidespawnen optimiert
 
+### 03.06.2025
+- 
+
 ---
 
 ## Dokumentation
