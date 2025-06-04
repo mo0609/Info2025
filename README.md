@@ -29,9 +29,11 @@ Java (BlueJ) Projekt 2025
 - [x] Game Over Screen
 - [x] Hintergund einbauen
 - [x] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
-- [ ] Weniger For-Schleifen im Ticker, für bessere Performance
-- [ ] Mähwerk anzeige einbauen
-- [ ] Für Getreide, 2. Arrey, das dann neu spawn
+- [x] Weniger For-Schleifen im Ticker, für bessere Performance
+- [x] Mähwerk anzeige einbauen
+- [x] Für Getreide, 2. Arrey, das dann neu spawn
+- [ ] Überlappen spawnen
+- [ ] Hintergrund wieder einbauen
 
 
 ---
@@ -76,6 +78,10 @@ Java (BlueJ) Projekt 2025
 - Neue besser Funktion für den Mast
 - Viele Versuche und Problembehebung beim Neuspawnen von Getreide -> neuner Ansatz
 - Pixel-Art: Mähwerk-Icon
+
+### 04.06.2025
+- Mähwerkanzeige
+- Game Over optimiert -> MD neuspawnen
 
 ---
 
