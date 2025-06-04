@@ -4,11 +4,16 @@ public class MLA extends SPIEL
     FIGUR back;
     FIGUR over;
     FIGUR[] getreide;
+    FIGUR[] getreide2;
     FIGUR[] mast;
+    FIGUR[] mast2;
     FIGUR[] vogel;
     TEXT anzeige;
+    TEXT manzeige;
     FIGUR aicon;
+    FIGUR micon;
     int gesammelt;
+    int mastkollanz = 3;
     double zeit;
     RECHTECK[] rahmen;
     int xyz;
@@ -17,6 +22,7 @@ public class MLA extends SPIEL
     MLA(){
         super(900,600);
         setzeRasterSichtbar(true);
+        
 
         //back = new FIGUR("a", "back-min.png", 1, 1);
         //back.skaliere(0.1);
@@ -36,6 +42,7 @@ public class MLA extends SPIEL
         MD.fuegeZustandVonGifHinzu("oben", "M_O.gif");
         MD.fuegeZustandVonGifHinzu("unten", "M_U.gif");
         MD.skaliere(0.10);
+        MD.setzeMittelpunkt(-13.5, -8.5);
 
         MD.setzeAnimationsGeschwindigkeitVon("rechts", 0.25);
         MD.setzeAnimationsGeschwindigkeitVon("links", 0.25);
@@ -56,7 +63,7 @@ public class MLA extends SPIEL
 
         }
          */
-        getreide = new FIGUR[30];
+        getreide = new FIGUR[40];
         for(int i = 0; i < getreide.length; i++){
             getreide[i] = new FIGUR("normal", "heu-ballen-test-bg-2.png", 1, 1);
             //getreide[i].macheAktiv();
@@ -64,12 +71,13 @@ public class MLA extends SPIEL
             getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
             /*
             if(i > 30){
-                getreide[i].setzeSichtbar(false);
+            getreide[i].setzeSichtbar(false);
             }*/
 
         }
 
-       
+
+
         mast = new FIGUR[15];
         double zufally = zufallszahlVonBis(-2, 2);
         for(int i = 0; i < mast.length; i++){
@@ -77,36 +85,85 @@ public class MLA extends SPIEL
             //getreide[i].macheAktiv();
             mast[i].skaliere(0.07);
             mast[i].setzeMittelpunkt(3.2*i-15, zufally*(3.2*i-15));
+            if(zufally > 1.5){
+                mast[i].drehen(90);
+            }else if(zufally < -1.5){
+                mast[i].drehen(90);
+            }
             mast[i].machePassiv();
             mast[i].drehen(90);
             mast[i].setzeEbene(15);
+        }
+        
+        mast2 = new FIGUR[15];
+        double zufally2 = zufallszahlVonBis(-2, 2);
+        for(int i = 0; i < mast.length; i++){
+            mast2[i] = new FIGUR("normal", "mast.gif");;
+            //getreide[i].macheAktiv();
+            mast2[i].skaliere(0.07);
+            mast2[i].setzeMittelpunkt(3.2*i-15, zufally2*(3.2*i-15));
+            mast2[i].machePassiv();
+            mast2[i].drehen(90);
+            mast2[i].setzeEbene(15);
         }
 
         aicon = new FIGUR("normal", "getreide-icon.gif");
         aicon.skaliere(0.1);
         aicon.setzeMittelpunkt(9, 9.5);
 
+        micon = new FIGUR("normal", "Mähwerk.gif");
+        micon.skaliere(0.25);
+        micon.setzeMittelpunkt(5, 9.5);
+
         anzeige = new TEXT(10, 9.5, 1, "0");
         anzeige.setzeSichtbar(true);
 
-        
-        
+        manzeige = new TEXT(6, 9.5, 1, "0");
+        manzeige.setzeSichtbar(true);
+        manzeige.setzeInhalt(mastkollanz);
+        anfang();
         tickerNeuStarten(0.05);
+    }
 
+    public void anfang()
+    {
+        boolean fertig = false;
+        while(!fertig)
+        {
+
+            fertig = true;
+            for(int i = 0; i < getreide.length; i++){
+                for(int j = 0; j < getreide.length; j++){
+                    if(getreide[i] != getreide[j] ){
+                        //if(MD.beruehrt(getreide[i])){
+                        if(getreide[i].beruehrt(MD)){
+                            gesammelt = 0;
+                            anzeige.setzeInhalt(gesammelt);
+
+                        }
+                        if(getreide[i].beruehrt(getreide[j])){
+                            ZufallGetreide(i);
+                            fertig = false;
+                            //getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void restart(){
 
     }
-    
-        public void tick(){
+
+    public void tick(){
         zeit = zeit + 0.05;
         for(int i = 0; i < getreide.length; i++){
             if(MD.beruehrt(getreide[i])){
                 gesammelt = gesammelt + 1;
                 anzeige.setzeInhalt(gesammelt);
                 //getreide[i].entfernen();
-                
+
                 for(int j = 0; j < getreide.length; j++){
                     if(getreide[i] != getreide[j] ){
                         //if(MD.beruehrt(getreide[i])){
@@ -121,65 +178,73 @@ public class MLA extends SPIEL
                     }
 
                 }
-                
+
                 ZufallGetreide(i);
             }
-            
-            for(int j = 0; j < getreide.length; j++){
-                if(getreide[i] != getreide[j] ){
-                    //if(MD.beruehrt(getreide[i])){
-                    if(getreide[i].beruehrt(MD)){
-                        gesammelt = 0;
-                        anzeige.setzeInhalt(gesammelt);
 
-                    }
-                    if(getreide[i].beruehrt(getreide[j])){
-                        ZufallGetreide(i);
-                        //getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
-                    }
-                }
-                if(getreide[i].beruehrt(MD)){
-                    getreide[i].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
-                    System.out.println("i: " + i + "getreide zufallgespawn anfang"  + "j: " + j);
-                }
-
-            }
         }
-
         /*if(gesammelt == 50){
         over.setzeSichtbar(true);
         MD.setzeSichtbar(false);
+        }*/
 
-        }
-        /* WICHTIG
         for(int i = 0; i < mast.length; i++){
             if(MD.beruehrt(mast[i])){
-                over.setzeSichtbar(true);
-                MD.setzeSichtbar(false);
-                for(int j = 0; j < mast.length; j++){
-                    mast[j].setzeSichtbar(false);
-                }
+                MD.setzeMittelpunkt(-13.5, -8.5);
+                mastkollanz = mastkollanz - 1;
+                manzeige.setzeInhalt(mastkollanz);
                 
-                for(int j = 0; j < getreide.length; j++){
-                    getreide[j].setzeSichtbar(false);
+                if(mastkollanz == 0){
+                    over.setzeSichtbar(true);
+                    MD.setzeSichtbar(false);
+                    for(int j = 0; j < mast.length; j++){
+                        mast[j].setzeSichtbar(false);
+                    }
+
+                    for(int j = 0; j < getreide.length; j++){
+                        getreide[j].setzeSichtbar(false);
+                    }
                 }
-                
                 //xyz = 1;
             }
             //if(xyz == 1){MD.setzeSichtbar(false);}
         }
         
-        if(getreide[31].nenneSichtbar() == false && zeit == 10){
-            for(int i = 0;i < (getreide.length - 30); i++){
-                //getreide
+        for(int i = 0; i < mast2.length; i++){
+            if(MD.beruehrt(mast2[i])){
+                MD.setzeMittelpunkt(-13.5, -8.5);
+                mastkollanz = mastkollanz - 1;
+                manzeige.setzeInhalt(mastkollanz);
+                
+                if(mastkollanz == 0){
+                    over.setzeSichtbar(true);
+                    MD.setzeSichtbar(false);
+                    for(int j = 0; j < mast2.length; j++){
+                        mast[j].setzeSichtbar(false);
+                    }
 
+                    for(int j = 0; j < getreide.length; j++){
+                        getreide[j].setzeSichtbar(false);
+                    }
+                }
+                //xyz = 1;
             }
+            //if(xyz == 1){MD.setzeSichtbar(false);}
+        }
+        
+        
+        
+        /*
+        if(getreide[31].nenneSichtbar() == false && zeit == 10){
+        for(int i = 0;i < (getreide.length - 30); i++){
+        //getreide
+
+        }
 
         }*/
     }
 
-    
-        public void neuesGetreideOhneKollision(int index) {
+    public void neuesGetreideOhneKollision(int index) {
         boolean positionGefunden = false;
 
         for (int versuch = 0; versuch < 20; versuch++) {
@@ -215,23 +280,17 @@ public class MLA extends SPIEL
         }
     }
 
+    public void ZufallGetreide(int num){
+        for(int i = 0; i < getreide.length; i++){
+            if(getreide[num].beruehrt(getreide[i])){
 
-
-    
-    
-        public void ZufallGetreide(int num){
-            for(int i = 0; i < getreide.length; i++){
-                if(getreide[num].beruehrt(getreide[i])){
-                
                 getreide[num].setzeMittelpunkt(zufallszahlVonBis(-13, 13), zufallszahlVonBis(-8, 8));
                 System.out.println(num + "getreide zufallgespawn");
             }
-            
-            
+
         }
-    
     }
-    
+
     public void tasteReagieren(int taste){
         if(MD.nenneSichtbar() == true)
         {
@@ -270,7 +329,6 @@ public class MLA extends SPIEL
         }
     }
 
-    
     public void macheRahmen(){
         rahmen[0] = new RECHTECK(30,1,-15,10);
         rahmen[1] = new RECHTECK(30,1,-15,-9);
