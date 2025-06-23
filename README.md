@@ -4,9 +4,20 @@ Java (BlueJ) Projekt 2025
 ---
 
 ## 📚Inhalt
-- [Konzept](#konzept)
-- [Changelog](#changelog)
+- [Dokumentation](#dokumentation)
+- [Konzept](#konzept/ideen)
 - [ToDo-Liste](#todo-liste)
+- [Probleme](#probleme)
+- [Changelog](#changelog)
+
+
+---
+
+## Dokumentation
+
+### Mastenreihe-Zufallsspawn
+- x-Funktion Mast: 2i-15
+- y-Funktion Mast: 1,5*(2i-15)
 
 ---
 
@@ -101,10 +112,9 @@ Dies soll durch ein zweites Arrey realisiert werden, das am Anfang erstellt wird
 - Mähwerkanzeige
 - Game Over optimiert -> MD neuspawnen
 
+### Pfingstfereien und danach
+- Versuche und Test - um Probleme möglicherweise doch umsetzten zu können
+- Performance-Verbesserungen
+
 ---
 
-## Dokumentation
-
-### Mastenreihe-Zufallsspawn
-- x-Funktion Mast: 2i-15
-- y-Funktion Mast: 1,5*(2i-15)
