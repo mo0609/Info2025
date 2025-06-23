@@ -32,8 +32,26 @@ Java (BlueJ) Projekt 2025
 - [x] Weniger For-Schleifen im Ticker, für bessere Performance
 - [x] Mähwerk anzeige einbauen
 - [x] Für Getreide, 2. Arrey, das dann neu spawn
-- [ ] Überlappen spawnen
+- [x] Überlappen spawnen
 - [ ] Hintergrund wieder einbauen
+
+---
+
+## Probleme
+
+### Überlappenspawnen
+
+Das Überlappenspawnen kann leider nicht vollständig verhindert werden. Der Speilspaß wird gesteigert.
+Problem: Performance
+
+### Zustand von Getreide ändert sich nach und nach
+
+Dadurch soll eigentlich das Spiel attraktiver werden. Wir haben den Ansatz genutzt ein 2. Arrey für die Zeit zu verwenden. Jedes Getreide hat also ein eigenes Arrey bei GZeit. Wenn das Getreide neu gespwant wird, wird die Zeit zurückgesetzt.
+Problem: Performance
+
+### Nach und nach spwant neues Getreide
+
+Dies soll durch ein zweites Arrey realisiert werden, das am Anfang erstellt wird und nach und nach 
 
 
 ---
