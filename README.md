@@ -51,7 +51,7 @@ Problem: Performance
 
 ### Nach und nach spwant neues Getreide
 
-Dies soll durch ein zweites Arrey realisiert werden, das am Anfang erstellt wird und nach und nach 
+Dies soll durch ein zweites Arrey realisiert werden, das am Anfang erstellt wird und dessen Getreide zu Beginn unsichtbar ist. Im Ticker Läuft ein Zeit-Zähler mit. Wenn dieser bestimmte Werte Überschreitet wird mehr Getreide sichtbar.
 
 
 ---
