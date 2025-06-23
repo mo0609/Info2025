@@ -31,7 +31,7 @@ Java (BlueJ) Projekt 2025
 - [x] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
 - [x] Weniger For-Schleifen im Ticker, für bessere Performance
 - [x] Mähwerk anzeige einbauen
-- [x] Für Getreide, 2. Arrey, das dann neu spawn
+- [x] Für Getreide, 2. Arrey, das dann neu spawnt
 - [x] Überlappen spawnen
 - [ ] Hintergrund wieder einbauen
 
