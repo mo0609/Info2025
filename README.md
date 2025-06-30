@@ -13,7 +13,7 @@ Java (BlueJ) Projekt 2025
 
 ---
 
-## Dokumentation
+# Dokumentation
 
 ### Mastenreihe-Zufallsspawn
 - x-Funktion Mast: 2i-15
@@ -34,16 +34,15 @@ Java (BlueJ) Projekt 2025
 
 ## ToDo-Liste
 
-- [x] Getreide nicht überlappen   
-- [x] Getreide Anzeige(oben rechts)
+- [x] Getreide weniger überlappen   
+- [x] Getreide Anzeige (oben rechts)
 - [x] Mast einbauen
 - [x] Game Over Screen
 - [x] Hintergund einbauen
-- [x] Nach dem despawnen von Getreide, spawned es irgendwo anders erneut
+- [x] Nach dem despawnen von Getreide, spawnt es irgendwo anders erneut
 - [x] Weniger For-Schleifen im Ticker, für bessere Performance
 - [x] Mähwerk anzeige einbauen
 - [x] Für Getreide, 2. Arrey, das dann neu spawnt
-- [x] Überlappen spawnen
 - [ ] Hintergrund wieder einbauen
 
 ---
@@ -52,17 +51,18 @@ Java (BlueJ) Projekt 2025
 
 ### Überlappenspawnen
 
-Das Überlappenspawnen kann leider nicht vollständig verhindert werden. Der Speilspaß wird gesteigert.
-Problem: Performance
+Das Überlappenspawnen kann leider nicht vollständig verhindert werden. Ohne das "Überlappenspawnen" soll der Spielspaß gesteigert werden.
+Hindernis: Performance (Absturz des Programms)
 
 ### Zustand von Getreide ändert sich nach und nach
 
-Dadurch soll eigentlich das Spiel attraktiver werden. Wir haben den Ansatz genutzt ein 2. Arrey für die Zeit zu verwenden. Jedes Getreide hat also ein eigenes Arrey bei GZeit. Wenn das Getreide neu gespwant wird, wird die Zeit zurückgesetzt.
-Problem: Performance
+Dadurch soll eigentlich das Spiel attraktiver werden. Wir haben den Ansatz verfolgt, ein 2. Arrey für die Zeit zu verwenden. Jedes Getreide hat also ein eigenes Arrey bei GZeit. Wenn das Getreide neu gespwant wird, wird die Zeit zurückgesetzt. Jedes getreide hat quasi eine eigene Stoppuhr.
+Hindernis: Performance (Absturz des Programms)
 
 ### Nach und nach spwant neues Getreide
 
-Dies soll durch ein zweites Arrey realisiert werden, das am Anfang erstellt wird und dessen Getreide zu Beginn unsichtbar ist. Im Ticker Läuft ein Zeit-Zähler mit. Wenn dieser bestimmte Werte Überschreitet wird mehr Getreide sichtbar.
+Dies soll durch ein zweites Arrey realisiert werden, das am Anfang erstellt wird und dessen Getreide zu Beginn unsichtbar ist. Im Ticker Läuft ein Zeit-Zähler mit. Wenn dieser bestimmte Werte Überschreitet wird mehr Getreide von diesem Arrey sichtbar.
+Hindernis: Performance (Absturz des Programms)
 
 
 ---
@@ -98,7 +98,7 @@ Dies soll durch ein zweites Arrey realisiert werden, das am Anfang erstellt wird
 
 ### 27.05.2025
 - Getreide & Masten werden bei Game Over auch ausgeblendet
-- mehrere kleinere Fehlerbehebunge
+- mehrere kleinere Fehlerbehebungen
 
 ### 28.05.2025
 - Masten- & Getreidespawnen optimiert
