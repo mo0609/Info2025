@@ -43,7 +43,7 @@ Java (BlueJ) Projekt 2025
 - [x] Weniger For-Schleifen im Ticker, für bessere Performance
 - [x] Mähwerk anzeige einbauen
 - [x] Für Getreide, 2. Arrey, das dann neu spawnt
-- [ ] Hintergrund wieder einbauen
+- [x] Hintergrund wieder einbauen
 
 ---
 
@@ -63,6 +63,9 @@ Hindernis: Performance (Absturz des Programms)
 
 Dies soll durch ein zweites Arrey realisiert werden, das am Anfang erstellt wird und dessen Getreide zu Beginn unsichtbar ist. Im Ticker Läuft ein Zeit-Zähler mit. Wenn dieser bestimmte Werte Überschreitet wird mehr Getreide von diesem Arrey sichtbar.
 Hindernis: Performance (Absturz des Programms)
+
+### Verhindern von spawnen der Masten auf Mähdrescher
+Mithilfe des Abstandes von Mähdrescher und Mast.
 
 
 ---
@@ -115,6 +118,12 @@ Hindernis: Performance (Absturz des Programms)
 ### Pfingstfereien und danach
 - Versuche und Test - um Probleme möglicherweise doch umsetzten zu können
 - Performance-Verbesserungen
+- 
+### 01. & 02.06.2025
+- Einbau von Zeit
+- Anzeige, wenn man gegen einen Masten fährt
+- Einbau Hintergrund
+- Pixel-Art: Animation Mähwerk kaputt, Zeit
 
 ---
 
